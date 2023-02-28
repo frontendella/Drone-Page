@@ -38,14 +38,14 @@ body {
 }
 
 .light-streaks {
-    background: #B2DD9E url('/assets/streaks.jpg');
+    background: #B2DD9E url('./assets/streaks.jpg');
     background-blend-mode: screen;
     background-size: cover;
     height: 100vh;
 }
 
 .blue-col {
-    background-color: #7988BE ;
+    background-color: #7988BE;
 }
 
 .container {
@@ -86,7 +86,7 @@ nav ul li a {
     color: white;
     display: block;
     padding: .4em 1.5em;
-    font-size: 1.5rem;
+    font-size: 1.5rem;;
     text-align: right;
 }
 
@@ -108,7 +108,7 @@ nav ul li a {
 
 h1 {
     font-size: 3rem;
-    font-size: normal;
+    font-weight: normal;
     line-height: 92%;
 }
 
@@ -127,12 +127,13 @@ h1 {
 .blur, .drone {
     position: absolute;
     left: 0;
+    z-index: 1;
 }
 
 .blur {
     opacity: .3;
     top: 1em;
-    animation: pulse 2s alternate-reverse infinite; 
+    animation: pulse 2s alternate-reverse infinite;
 }
 
 .drone {
@@ -141,7 +142,7 @@ h1 {
 
 @keyframes hover {
     from {
-        transform: translateY(-30%);
+        transform: translateY(-30px);
     }
 }
 
@@ -150,7 +151,6 @@ h1 {
         opacity: 0;
     }
 }
-
 
 /* Section 1 */
 
@@ -207,7 +207,7 @@ h2 {
     font-size: 2.5rem;
     margin-bottom: 0;
     font-weight: normal;
-} 
+}
 
 .footage-content p {
     font-family: 'Montserrat';
@@ -215,7 +215,7 @@ h2 {
 
 .gallery-container {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         ". a b"
         "c d ."
         ". e .";
@@ -245,8 +245,6 @@ h2 {
 .gallery-container img:nth-of-type(5) {
     grid-area: e;
 }
-
-
 
 /* Section 3 */
 
@@ -314,22 +312,21 @@ button {
     color: black;
 }
 
-
 @media only screen and (min-width: 900px) {
     html {
         font-size: 20px;
     }
-
+    
     .top-bg-container {
         width: 80%;
         grid-template-columns: 60% auto;
     }
-
+    
     .container {
         width: 80%;
         margin: 0 auto;
     }
-
+    
     .content {
         display: flex;
         text-align: left;
@@ -337,22 +334,22 @@ button {
         margin-left: 0;
         margin-right: 0;
     }
-
+    
     h1 {
         font-size: 5rem;
         width: 80%;
     }
-
+    
     .type p {
-        width: 80%
+        width: 80%;
     }
-
+    
     /* Nav */
-
+    
     .menu-btn, .exit-btn {
-        display: none
+        display: none;
     }
-
+    
     nav ul {
         transform: translateX(0);
         width: unset;
@@ -363,11 +360,65 @@ button {
         position: unset;
         height: auto;
     }
-
+    
     nav ul li a {
         font-size: 1rem;
         padding: 0 1em;
     }
-
-
+    
+    /* Section 1 */
+    
+    
+    .quote {
+        width: 80%;
+        display: grid;
+        place-content: center;
+    }
+    
+    blockquote, cite {
+        width: 50%;
+        justify-self: center;
+    }
+    
+    blockquote {
+        font-size: 2rem;
+    }
+    
+    /* Section 2 */ 
+    
+    .gallery {
+        display: flex;
+        gap: 4em;
+    }
+    
+    .gallery-container {
+        margin-top: -5em;
+        z-index: 1;
+    }
+    
+    h2 {
+        font-size: 4rem;
+        font-weight: normal;
+        line-height: 91.6%;
+    }
+    
+    /* contact section */
+    
+    .cols-2 {
+        display: flex;
+        gap: 3em;
+    }
+    
+    .form-container, .other-info {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+    
+    .other-info {
+        margin-top: 2em;
+    }
+    
+    input {
+        padding: 1.5em;
+    }
 }
